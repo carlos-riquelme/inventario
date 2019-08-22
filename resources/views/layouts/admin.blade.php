@@ -71,8 +71,29 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
+        <main class="container py-4">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card text-white bg-info mb-3">
+                        <div class="card-body">
+                            <div class="card-title">Bienvenido</div>
+                            <div class="card-text">Carlos Riquelme</div>
+                        </div>
+                    </div>
+                    <a href="/admin/panel" class="btn btn-primary" style="width: 100%">Admin Panel</a>
+                    <div class="card card-header">
+                            Recursos
+                    </div>
+                    <div class="card card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="{{ route('productos.index') }}">Productos</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                        @yield('content')
+                </div>
+            </div>
         </main>
     </div>
     <!-- Scripts -->
