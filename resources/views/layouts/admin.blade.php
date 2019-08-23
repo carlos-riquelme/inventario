@@ -71,9 +71,9 @@
             </div>
         </nav>
 
-        <main class="container py-4">
+        <main class="py-4">
             <div class="row">
-                <div class="col-md-3">
+                <div class="">
                     <div class="card text-white bg-info mb-3">
                         <div class="card-body">
                             <div class="card-title">Bienvenido</div>
@@ -90,7 +90,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col">
                         @yield('content')
                 </div>
             </div>

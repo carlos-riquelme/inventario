@@ -6,8 +6,13 @@ use App\Producto;
 use Faker\Generator as Faker;
 
 $factory->define(Producto::class, function (Faker $faker) {
+
+    $nombre = $faker->name;
+    $slug = str_slug($nombre, '-');
+
     return [
-        'nombre' => $faker->name,
+        'nombre' => $nombre,
+        'slug' => $slug,
         'codigo_barras' => $faker->ean13,
         'proveedor' => $faker->company,
         'familia' => $faker->word,

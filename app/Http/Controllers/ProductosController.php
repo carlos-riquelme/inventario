@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Productos;
+use App\Producto;
 use Illuminate\Http\Request;
 
 class ProductosController extends Controller
@@ -15,8 +15,11 @@ class ProductosController extends Controller
     public function index()
     {
         // Devuelve todos los productos
-        return view('admin.productos.index')->with('productos', Productos::all());
-    }
+        // return view('admin.productos.index')->with('productos', Producto::all());
+        $productos = Producto::where('vigente', 1)->simplePaginate(5);
+        // $productos = Producto::where('vigente', 1);
+        return view('admin.productos.index', ['productos' => $productos]);
+        }
 
     /**
      * Show the form for creating a new resource.
@@ -45,9 +48,11 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Producto $producto)
     {
-        //
+        return view('admin.productos.show', [
+            'producto' => $producto
+        ]);
     }
 
     /**
