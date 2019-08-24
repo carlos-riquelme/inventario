@@ -26,6 +26,7 @@ $factory->define(Producto::class, function (Faker $faker) {
         'detalles' => $faker->text,
         'precio' => $faker->numberBetween($min = 1000, $max = 9000),
         'receta' => $faker->boolean,
+        'fecha_adq' => $faker->dateTimeThisYear,
         'fecha_exp' => $faker->dateTimeThisYear,
     ];
 });

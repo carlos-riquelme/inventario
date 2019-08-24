@@ -71,9 +71,9 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="col px-md-4 py-4">
             <div class="row">
-                <div class="">
+                <div class="col col-lg-2 float-left">
                     <div class="card text-white bg-info mb-3">
                         <div class="card-body">
                             <div class="card-title">Bienvenido</div>

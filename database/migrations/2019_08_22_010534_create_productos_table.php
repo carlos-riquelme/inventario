@@ -30,6 +30,7 @@ class CreateProductosTable extends Migration
             $table->text('detalles');
             $table->decimal('precio', 10, 2);
             $table->boolean('receta');
+            $table->date('fecha_adq');
             $table->date('fecha_exp');
             $table->timestamps();
         });
