@@ -2,8 +2,25 @@
 
 @section('content')
 <div class="container">
+        @if(session()->has('success'))
+        <div class="alert alert-success">
+            {{session()->get('success')}}
+        </div>
+    @endif
+    @if (session()->has('error'))
+        <div class="alert alert-danger">
+            {{ session()->get('error')}}
+        </div>
+    @endif
     <div class="card">
-        <div class="card-header">Productos Vigentes</div>
+        <div class="card-header">
+            <div class="d-flex justify-content-between">
+                <h3>Listado de Productos Vigentes</h3>
+                <div class="btn-group">
+                    <a href="{{ route('productos.create') }}" class="btn btn-success">Agregar Producto</a>
+                </div>
+            </div>
+        </div>
 
         <div class="card-body">
             @if (session('status'))
@@ -59,10 +76,10 @@
                                 {{ $producto->SKU }}
                             </td>
                             <td>
-                                {{ $producto->precio }}
+                                ${{ number_format($producto->precio) }}
                             </td>
                             <td>
-                                {{ $producto->receta }}
+                                {{ $producto->receta ? 'Sí' : 'No' }}
                             </td>
                             <td>
                                 <a href="{{ route('productos.show', $producto->slug) }}" style="color: white" class="btn btn-info btn-sm">Ver Más</a>

@@ -27,7 +27,6 @@ class CreateProductosTable extends Migration
             $table->string('presentacion');
             $table->string('SKU');
             $table->text('descripcion');
-            $table->text('detalles');
             $table->decimal('precio', 10, 2);
             $table->boolean('receta');
             $table->date('fecha_adq');

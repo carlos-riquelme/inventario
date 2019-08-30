@@ -23,7 +23,6 @@ $factory->define(Producto::class, function (Faker $faker) {
         'presentacion' => $faker->word,
         'SKU' => $faker->randomNumber,
         'descripcion' => $faker->text,
-        'detalles' => $faker->text,
         'precio' => $faker->numberBetween($min = 1000, $max = 9000),
         'receta' => $faker->boolean,
         'fecha_adq' => $faker->dateTimeThisYear,

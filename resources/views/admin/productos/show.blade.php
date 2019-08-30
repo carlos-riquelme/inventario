@@ -2,12 +2,22 @@
 
 @section('content')
 <div class="container">
+        @if(session()->has('success'))
+        <div class="alert alert-success">
+            {{session()->get('success')}}
+        </div>
+    @endif
+    @if (session()->has('error'))
+        <div class="alert alert-danger">
+            {{ session()->get('error')}}
+        </div>
+    @endif
     <div class="card">
         <div class="card-header">
             <div class="d-flex justify-content-between">
                 <h3>Producto: {{ $producto->nombre }}</h3>
                 <div class="btn-group">
-                    <button class="btn btn-primary btn-sm">Editar</button>
+                    <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-primary">Editar</a>
                 </div>
             </div>
         </div>
@@ -16,102 +26,101 @@
                 <form class="">
                         <div class="form-row d-flex justify-content-center">
                             <div class="input-group col-md-5">
-                                <label for="nombre">Nombre</label>
+                                <label for="nombre"><h5><strong>Nombre</strong></h5></label>
                                 <div class="input-group">
-                                    <input type="text" readonly class="form-control" name="nombre" id="nombre" value="{{ $producto->nombre }}">
+                                        {{ $producto->nombre }}
                                 </div>
                             </div>
                             <div class="input-group col-md-2">
-                                <label for="SKU">SKU</label>
+                                <label for="SKU"><h5><strong>SKU</strong></h5></label>
                                 <div class="input-group">
-                                    <input type="text" readonly class="form-control" name="SKU" id="SKU" value="{{ $producto->SKU }}">
+                                    {{ $producto->SKU }}
                                 </div>
                             </div>
                             <div class="input-group col-md-2">
-                                <label for="precio">Precio</label>
+                                <label for="precio"><h5><strong>Precio</strong></h5></label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">$</span>
-                                        <input type="number" readonly class="form-control" name="precio" id="precio" value="{{ $producto->precio }}">
+                                        $ {{  number_format($producto->precio) }}
                                     </div>
                                 </div>
                             </div>
                             <div class="input-group col-md-1">
-                                <label for="stock">Stock</label>
+                                <label for="stock"><h5><strong>Stock</strong></h5></label>
                                 <div class="input-group">
-                                    <input type="text" readonly class="form-control" name="stock" id="stock" value="{{ $producto->stock }}">
+                                    {{ $producto->stock }}
                                 </div>
                             </div>
                             <div class="input-group col-sm-2">
-                                <label for="stock_minimo">Stock Mínimo</label>
+                                <label for="stock_minimo"><h5><strong>Stock Mínimo</strong></h5></label>
                                 <div class="input-group">
-                                    <input type="number" readonly class="form-control" name="stock_minimo" id="stock_minimo" value="{{ $producto->stock_minimo }}">
+                                    {{ $producto->stock_minimo }}
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row d-flex justify-content-between py-2">
+                        <div class="form-row d-flex justify-content-between py-4">
                             <div class="input-group col-md-6">
+                                <label for="proveedor"><h5><strong>Proveedor</strong></h5></label>
                                 <div class="input-group">
-                                    <label for="descripcion">Descripción</label>
-                                </div>
-                                <div class="input-group">
-                                    <textarea type="text" name="descripcion" id="descripcion" readonly class="form-control">{{ $producto->descripcion }}</textarea>
+                                    {{ $producto->proveedor }}
                                 </div>
                             </div>
                             <div class="input-group col-md-2">
                                 <div class="input-group">
-                                    <label for="fecha_adq">Fecha adquisición</label>
+                                    <label for="fecha_adq"><h5><strong>Fecha Adquisición</strong></h5></label>
                                 </div>
                                 <div class="input-group">
-                                    <input type="date" name="fecha_adq" id="fecha_adq" readonly class="form-control" value="{{ $producto->fecha_adq }}">
+                                    {{ $producto->fecha_adq }}
                                 </div>
                             </div>
                             <div class="input-group col-md-2">
                                 <div class="input-group">
-                                    <label for="fecha_exp">Fecha expiración</label>
+                                    <label for="fecha_exp"><h5><strong>Fecha Expiración</strong></h5></label>
                                 </div>
                                 <div class="input-group">
-                                    <input type="date" name="fecha_exp" id="fecha_exp" readonly class="form-control" value="{{ $producto->fecha_exp }}">
+                                    {{ $producto->fecha_exp }}
                                 </div>
                             </div>
                         </div>
                         <div class="form-row d-flex justify-content-between">
                             <div class="input-group col-md-3">
-                                <label for="familia">Familia</label>
+                                <label for="familia"><h5><strong>Familia</strong></h5></label>
                                 <div class="input-group">
-                                    <input type="text" name="familia" id="familia" readonly class="form-control" value="{{ $producto->familia }}">
+                                    {{ $producto->familia }}
                                 </div>
                             </div>
                             <div class="input-group col-md-3">
-                                <label for="categoria">Categoria</label>
+                                <label for="categoria"><h5><strong>Categoria</strong></h5></label>
                                 <div class="input-group">
-                                    <input type="text" name="categoria" id="categoria" readonly class="form-control" value="{{ $producto->categoria }}">
+                                    {{ $producto->categoria }}
                                 </div>
                             </div>
                             <div class="input-group col-md-1">
-                                <label for="vigente">Vigencia</label>
+                                <label for="vigente"><h5><strong>Vigencia</strong></h5></label>
                                 <div class="input-group">
-                                    <input type="text" name="vigente" id="vigente" readonly class="form-control" value="{{ $producto->vigente ? 'Sí' : 'No'}}">
+                                    {{ $producto->vigente ? 'Sí' : 'No'}}
                                 </div>
                             </div>
                             <div class="input-group col-md-3">
-                                <label for="presentacion">Presentación</label>
+                                <label for="presentacion"><h5><strong>Presentación</strong></h5></label>
                                 <div class="input-group">
-                                    <input type="text" name="presentacion" id="presentacion" readonly class="form-control" value="{{ $producto->presentacion }}">
+                                    {{ $producto->presentacion }}
                                 </div>
                             </div>
                             <div class="input-group col-md-1">
-                                <label for="receta">Receta</label>
+                                <label for="receta"><h5><strong>Receta</strong></h5></label>
                                 <div class="input-group">
-                                    <input type="text" name="receta" id="receta" readonly class="form-control" value="{{ $producto->receta ? 'Sí' : 'No'}}">
+                                    {{ $producto->receta ? 'Sí' : 'No'}}
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row d-flex justify-content-between py-2">
+                        <div class="form-row d-flex justify-content-between py-4">
                             <div class="input-group col-md-6">
-                                <label for="proveedor">Proveedor</label>
                                 <div class="input-group">
-                                    <input type="text" name="proveedor" id="proveedor" readonly class="form-control" value="{{ $producto->proveedor }}">
+                                    <label for="descripcion"><h5><strong>Descripción</strong></h5></label>
+                                </div>
+                                <div class="input-group">
+                                    {!! $producto->descripcion !!}
                                 </div>
                             </div>
                         </div>

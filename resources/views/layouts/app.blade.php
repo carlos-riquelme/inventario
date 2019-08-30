@@ -77,5 +77,8 @@
     </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" ></script>
+    <script>
+    $('.dropdown-toggle').dropdown()
+    </script>
 </body>
 </html>

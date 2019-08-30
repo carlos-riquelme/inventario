@@ -17,6 +17,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('css')
 </head>
 <body>
     <div id="app">
@@ -73,7 +74,7 @@
 
         <main class="col px-md-4 py-4">
             <div class="row">
-                <div class="col col-lg-2 float-left">
+                {{-- <div class="col col-lg-2 float-left">
                     <div class="card text-white bg-info mb-3">
                         <div class="card-body">
                             <div class="card-title">Bienvenido</div>
@@ -89,7 +90,107 @@
                             <li class="list-group-item"><a href="{{ route('productos.index') }}">Productos</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
+                <nav class="col-md-1 d-none d-md-block bg-light sidebar">
+                        <div class="sidebar-sticky">
+                          <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{{ route('panel') }}">
+                                <span data-feather="home"></span>
+                                Dashboard <span class="sr-only">(current)</span>
+                              </a>
+                            </li>
+                            <li class="nav-item dropright" aria-haspopup="true" aria-expanded="false">
+                              {{-- <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                                <span data-feather="file"></span>
+                                Productos
+                              </a> --}}
+                              <button type="button" class="btn btn-outline-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Productos
+                              </button>
+                              <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                <a class="dropdown-item" href="{{ route('productos.index') }}">Productos Vigentes</a>
+                                <a class="dropdown-item" href="{{ route('productos.novigente') }}">Productos Descontinuados</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('productos.create') }}">Agregar Producto</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropright" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-outline-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Proveedores
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Todos los Proveedores</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Agregar Proveedor</a>
+                            </div>
+                            </li>
+                            <li class="nav-item dropright">
+                                <button type="button" class="btn btn-outline-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Mascotas
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Todos los Proveedores</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Agregar Proveedor</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropright">
+                                <button type="button" class="btn btn-outline-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Movimientos
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Todos los Proveedores</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Agregar Proveedor</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropright">
+                                <button type="button" class="btn btn-outline-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Otros
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Todos los Proveedores</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Agregar Proveedor</a>
+                                </div>
+                            </li>
+                          </ul>
+
+                          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>Reportes</span>
+                            <a class="d-flex align-items-center text-muted" href="#">
+                              <span data-feather="plus-circle"></span>
+                            </a>
+                          </h6>
+                          <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Current month
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Last quarter
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Social engagement
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Year-end sale
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </nav>
                 <div class="col">
                         @yield('content')
                 </div>
@@ -98,5 +199,6 @@
     </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" ></script>
+    @yield('js')
 </body>
 </html>
