@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Proveedor extends Model
 {
-    public $guarded = [
+    protected $guarded = [
         'id'
     ];
 

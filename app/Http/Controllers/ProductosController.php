@@ -152,6 +152,12 @@ class ProductosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $producto = Producto::findOrfail($id);
+
+        $producto->delete();
+
+        session()->flash('success', 'Producto eliminado de la base de datos.');
+
+        return redirect()->route('productos.index');
     }
 }

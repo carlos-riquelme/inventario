@@ -91,7 +91,7 @@
                         </ul>
                     </div>
                 </div> --}}
-                <nav class="col-md-1 d-none d-md-block bg-light sidebar">
+                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                         <div class="sidebar-sticky">
                           <ul class="nav flex-column">
                             <li class="nav-item">
@@ -120,19 +120,22 @@
                                     Proveedores
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Todos los Proveedores</a>
+                                <a class="dropdown-item" href="{{ route('proveedores.index') }}">Todos los Proveedores</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Agregar Proveedor</a>
+                                <a class="dropdown-item" href="{{ route('proveedores.create') }}">Agregar Proveedor</a>
                             </div>
                             </li>
                             <li class="nav-item dropright">
                                 <button type="button" class="btn btn-outline-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Mascotas
+                                        Clientes y Mascotas
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Todos los Proveedores</a>
+                                    <a class="dropdown-item" href="#">Todos los Clientes</a>
+                                    <a class="dropdown-item" href="#">Agregar Cliente</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Agregar Proveedor</a>
+                                    <a class="dropdown-item" href="#">Todas las Mascotas</a>
+                                    <a class="dropdown-item" href="#">Administrar Especies</a>
+                                    <a class="dropdown-item" href="#">Administrar Razas</a>
                                 </div>
                             </li>
                             <li class="nav-item dropright">
@@ -200,5 +203,6 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" ></script>
     @yield('js')
+    @yield('js_confirm')
 </body>
 </html>

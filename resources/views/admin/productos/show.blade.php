@@ -16,8 +16,17 @@
         <div class="card-header">
             <div class="d-flex justify-content-between">
                 <h3>Producto: {{ $producto->nombre }}</h3>
-                <div class="btn-group">
-                    <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-primary">Editar</a>
+                <div class="row justify-content-end">
+                    <div class="btn-group mx-2">
+                        <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-primary">Editar</a>
+                    </div>
+                    <form action="{{ route('productos.destroy', $producto->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <div class="btn-group">
+                            <button type="submit" onclick="return confirm('¿Está seguro de eliminar este producto?')" class="btn btn-danger">Eliminar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
