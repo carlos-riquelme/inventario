@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(ProductoTableSeeder::class);
         factory('App\Producto', 5)->create();
         factory('App\Proveedor', 5)->create();
+        factory('App\Client', 5)->create();
     }
 }

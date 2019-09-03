@@ -130,7 +130,7 @@
                                         Clientes y Mascotas
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Todos los Clientes</a>
+                                    <a class="dropdown-item" href="{{ route('clientes.index') }}">Todos los Clientes</a>
                                     <a class="dropdown-item" href="#">Agregar Cliente</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Todas las Mascotas</a>

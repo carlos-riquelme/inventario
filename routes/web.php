@@ -23,4 +23,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/panel', 'AdminController@index')->name('panel');
 Route::resource('/admin/productos', 'ProductosController');
 Route::resource('/admin/proveedores', 'ProveedorsController');
+Route::resource('/admin/clientes', 'ClientsController');
 Route::get('/admin/productosnovigentes', 'ProductosController@novigente')->name('productos.novigente');
