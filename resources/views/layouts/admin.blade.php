@@ -131,11 +131,10 @@
                                 </button>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="{{ route('clientes.index') }}">Todos los Clientes</a>
-                                    <a class="dropdown-item" href="#">Agregar Cliente</a>
+                                    <a class="dropdown-item" href="{{ route('clientes.create') }}">Agregar Cliente</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Todas las Mascotas</a>
-                                    <a class="dropdown-item" href="#">Administrar Especies</a>
-                                    <a class="dropdown-item" href="#">Administrar Razas</a>
+                                    <a class="dropdown-item" href="{{ route('mascotas.index') }}">Todas las Mascotas</a>
+
                                 </div>
                             </li>
                             <li class="nav-item dropright">

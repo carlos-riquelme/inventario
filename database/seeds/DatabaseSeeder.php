@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         factory('App\Producto', 5)->create();
         factory('App\Proveedor', 5)->create();
         factory('App\Client', 5)->create();
+        factory('App\Mascota', 5)->create();
     }
 }
