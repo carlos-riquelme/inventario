@@ -80,7 +80,7 @@ class ClientsController extends Controller
     {
         $cliente = Client::findOrFail($id);
 
-        return view('admin.clientes.edit', \compact('cliente'));
+        return view('admin.clientes.edit', compact('cliente'));
     }
 
     /**

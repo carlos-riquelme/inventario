@@ -62,7 +62,9 @@ class MascotasController extends Controller
      */
     public function show($id)
     {
-        //
+        $mascota = Mascota::findOrFail($id);
+
+        return view('admin.mascotas.show', ['mascota'=> $mascota]);
     }
 
     /**
@@ -73,7 +75,9 @@ class MascotasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mascota = Mascota::findOrFail($id);
+
+        return view('admin.mascotas.edit', compact('mascota'));
     }
 
     /**

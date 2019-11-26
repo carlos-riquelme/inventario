@@ -50,7 +50,7 @@
                                 <input type="text" readonly class="form-control-plaintext" name="email" id="email" value="{{ $cliente->email }}">
                             </div>
                         </div>
-                        </div>
+                    </div>
                         <div class="form-row d-flex justify-content-between">
                             <div class="input-group col-md-5">
                                 <label for="direccion"><h5><strong>Dirección</strong></h5></label>
